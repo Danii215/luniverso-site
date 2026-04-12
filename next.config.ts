@@ -1,12 +1,12 @@
 import type { NextConfig } from 'next';
-import { resolve } from 'path';
+import path from 'path';
 
 const nextConfig: NextConfig = {
     compiler: {
         styledComponents: true,
     },
     turbopack: {
-        root: resolve('.'),
+        root: path.join(__dirname),
     },
 };
 
