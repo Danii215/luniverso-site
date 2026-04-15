@@ -1,11 +1,7 @@
 'use client';
 
-import type { ButtonHTMLAttributes } from 'react';
-import { StyledButton, type ButtonVariant } from './Button.style';
-
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-    variant?: ButtonVariant;
-};
+import { StyledButton } from './Button.style';
+import type { ButtonProps } from './Button.types';
 
 export function Button({
     variant = 'primary',

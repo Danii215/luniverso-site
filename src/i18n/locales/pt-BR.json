@@ -1,0 +1,64 @@
+{
+    "header": {
+        "home": "Home",
+        "explore": "Explorar",
+        "market": "Mercadinho",
+        "create": "Criar",
+        "login": "Entrar",
+        "signup": "Criar Conta"
+    },
+    "home": {
+        "exploreSection": "Explorar"
+    },
+    "login": {
+        "title": "Bem-vindo de volta",
+        "subtitle": "Entre na sua conta para continuar",
+        "emailLabel": "Email",
+        "emailPlaceholder": "seu@email.com",
+        "emailRequired": "Email é obrigatório",
+        "passwordLabel": "Senha",
+        "passwordPlaceholder": "Sua senha",
+        "passwordRequired": "Senha é obrigatória",
+        "submit": "Entrar",
+        "noAccount": "Não tem uma conta?",
+        "signupLink": "Criar conta",
+        "panelTitle": "Explore o Luniverso",
+        "panelText": "Crie e explore planetas, compartilhe mundos e faça parte de uma comunidade de exploradores espaciais"
+    },
+    "signup": {
+        "title": "Criar conta",
+        "subtitle": "Junte-se ao Luniverso e comece a explorar",
+        "usernameLabel": "Nome de usuário",
+        "usernamePlaceholder": "seu_username",
+        "usernameRequired": "Nome de usuário é obrigatório",
+        "emailLabel": "Email",
+        "emailPlaceholder": "seu@email.com",
+        "emailRequired": "Email é obrigatório",
+        "passwordLabel": "Senha",
+        "passwordPlaceholder": "Mínimo 8 caracteres",
+        "passwordRequired": "Senha é obrigatória",
+        "passwordMinLength": "A senha deve ter pelo menos 8 caracteres",
+        "confirmPasswordLabel": "Confirmar senha",
+        "confirmPasswordPlaceholder": "Repita a senha",
+        "confirmPasswordRequired": "Confirmação de senha é obrigatória",
+        "passwordsMismatch": "As senhas não coincidem",
+        "submit": "Criar conta",
+        "hasAccount": "Já tem uma conta?",
+        "loginLink": "Entrar",
+        "panelTitle": "O Luniverso te aguarda",
+        "panelText": "Descubra novos planetas! Conecte-se com outros cosmonautas e construa seu próprio universo",
+        "error": "Ocorreu um erro ao criar a conta, por favor, tente novamente mais tarde.",
+        "emailAlreadyExists": "Email já em uso",
+        "usernameAlreadyExists": "Nome de usuário já em uso"
+    },
+    "card": {
+        "playing": "jogando"
+    },
+    "planet": {
+        "by": "Por",
+        "play": "Jogar",
+        "favorite": "Favoritar",
+        "playing": "Jogando",
+        "visits": "Visitas"
+    }
+}

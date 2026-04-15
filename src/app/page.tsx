@@ -1,6 +1,9 @@
+'use client';
+
 import { Thumbnail } from '@/assets/images';
 import { Header, CardList } from '@/components/organisms';
 import type { CardProps } from '@/components/molecules';
+import { useTranslation } from '@/i18n';
 
 const mockCards: CardProps[] = [
     {
@@ -13,10 +16,12 @@ const mockCards: CardProps[] = [
 ];
 
 export default function Home(): React.ReactElement {
+    const { t } = useTranslation();
+
     return (
         <main>
             <Header />
-            <CardList title="Explore" items={mockCards} />
+            <CardList title={t('home.exploreSection')} items={mockCards} />
         </main>
     );
 }

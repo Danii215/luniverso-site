@@ -1,30 +1,13 @@
 'use client';
 
 import Image, { type StaticImageData } from 'next/image';
-import {
-    HiHeart,
-    HiOutlinePlay,
-    HiHandThumbUp,
-    HiHandThumbDown,
-    HiUsers,
-    HiEye,
-} from 'react-icons/hi2';
+import { HiOutlinePlay, HiUsers, HiEye } from 'react-icons/hi2';
 import { TbArrowBigUp } from 'react-icons/tb';
 import { TbArrowBigDown } from 'react-icons/tb';
 import { LuStar } from 'react-icons/lu';
+import { useTranslation } from '@/i18n';
 import * as S from './PlanetDetail.style';
-
-export type PlanetDetailProps = {
-    id: string;
-    thumbnail: StaticImageData;
-    title: string;
-    author: string;
-    description: string;
-    likes: number;
-    dislikes: number;
-    playersOnline: number;
-    totalPlays: number;
-};
+import type { PlanetDetailProps } from './PlanetDetail.types';
 
 export function PlanetDetail({
     id,
@@ -37,6 +20,8 @@ export function PlanetDetail({
     playersOnline,
     totalPlays,
 }: PlanetDetailProps): React.ReactElement {
+    const { t } = useTranslation();
+
     return (
         <S.Container>
             <S.TopSection>
@@ -56,7 +41,7 @@ export function PlanetDetail({
                 <S.RightColumn>
                     <S.Title>{title}</S.Title>
                     <S.Author>
-                        By{' '}
+                        {t('planet.by')}{' '}
                         <S.AuthorLink
                             href={`/astronauts/${author.toLowerCase()}`}
                         >
@@ -67,7 +52,7 @@ export function PlanetDetail({
                     <S.Spacer />
 
                     <S.PlayLink href={`/planet/${id}`}>
-                        <HiOutlinePlay size={20} /> Play
+                        <HiOutlinePlay size={20} /> {t('planet.play')}
                     </S.PlayLink>
                 </S.RightColumn>
             </S.TopSection>
@@ -85,7 +70,7 @@ export function PlanetDetail({
 
                 <S.FavoriteButton $active={false}>
                     <LuStar size={16} />
-                    Favorite
+                    {t('planet.favorite')}
                 </S.FavoriteButton>
             </S.Actions>
             <S.Description>{description}</S.Description>
@@ -95,7 +80,7 @@ export function PlanetDetail({
                         <HiUsers size={16} />
                         {playersOnline.toLocaleString()}
                     </S.StatValue>
-                    <S.StatLabel>Playing</S.StatLabel>
+                    <S.StatLabel>{t('planet.playing')}</S.StatLabel>
                 </S.StatItem>
 
                 <S.StatItem>
@@ -103,7 +88,7 @@ export function PlanetDetail({
                         <HiEye size={16} />
                         {totalPlays.toLocaleString()}
                     </S.StatValue>
-                    <S.StatLabel>Visits</S.StatLabel>
+                    <S.StatLabel>{t('planet.visits')}</S.StatLabel>
                 </S.StatItem>
             </S.StatsRow>
         </S.Container>

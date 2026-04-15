@@ -1,17 +1,11 @@
 'use client';
 
-import Image, { type StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { FaHeart } from 'react-icons/fa';
 import { HiUsers } from 'react-icons/hi2';
+import { useTranslation } from '@/i18n';
+import type { CardProps } from './Card.types';
 import * as S from './Card.style';
-
-export type CardProps = {
-    id: string;
-    thumbnail: StaticImageData;
-    title: string;
-    likes: number;
-    playersOnline: number;
-};
 
 export function Card({
     id,
@@ -20,6 +14,8 @@ export function Card({
     likes,
     playersOnline,
 }: CardProps): React.ReactElement {
+    const { t } = useTranslation();
+
     return (
         <S.CardContainer href={`/planets/${id}`}>
             <S.ThumbnailWrapper>
@@ -39,7 +35,7 @@ export function Card({
                     </S.Stat>
                     <S.Stat>
                         <HiUsers size={18} /> {playersOnline.toLocaleString()}{' '}
-                        playing
+                        {t('card.playing')}
                     </S.Stat>
                 </S.Stats>
             </S.CardBody>

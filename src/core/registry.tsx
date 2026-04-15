@@ -8,6 +8,8 @@ import {
     ThemeProvider,
 } from 'styled-components';
 import { theme } from './theme';
+import { I18nProvider } from '@/i18n';
+import { Toaster } from 'sonner';
 
 export default function StyledComponentsRegistry({
     children,
@@ -23,11 +25,23 @@ export default function StyledComponentsRegistry({
     });
 
     if (typeof window !== 'undefined')
-        return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+        return (
+            <ThemeProvider theme={theme}>
+                <I18nProvider>
+                    <Toaster richColors position="top-right" closeButton />
+                    {children}
+                </I18nProvider>
+            </ThemeProvider>
+        );
 
     return (
         <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
-            <ThemeProvider theme={theme}>{children}</ThemeProvider>
+            <ThemeProvider theme={theme}>
+                <I18nProvider>
+                    <Toaster richColors position="top-right" closeButton />
+                    {children}
+                </I18nProvider>
+            </ThemeProvider>
         </StyleSheetManager>
     );
 }

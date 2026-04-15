@@ -1,12 +1,8 @@
 'use client';
 
-import { Card, type CardProps } from '@/components/molecules/Card';
+import { Card } from '@/components/molecules';
 import * as S from './CardList.style';
-
-type CardListProps = {
-    title: string;
-    items: CardProps[];
-};
+import type { CardListProps } from './CardList.types';
 
 export function CardList({ title, items }: CardListProps): React.ReactElement {
     return (
