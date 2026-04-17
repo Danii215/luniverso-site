@@ -8,6 +8,7 @@ import { LuStar } from 'react-icons/lu';
 import { useTranslation } from '@/i18n';
 import * as S from './PlanetDetail.style';
 import type { PlanetDetailProps } from './PlanetDetail.types';
+import { useEffect, useState } from 'react';
 
 export function PlanetDetail({
     id,
@@ -21,6 +22,13 @@ export function PlanetDetail({
     totalPlays,
 }: PlanetDetailProps): React.ReactElement {
     const { t } = useTranslation();
+    const [baseUrl, setBaseUrl] = useState<string>('');
+
+    useEffect(() => {
+        setBaseUrl(
+            `${window.location.protocol}//planet.${window.location.hostname}`,
+        );
+    }, []);
 
     return (
         <S.Container>
@@ -51,9 +59,11 @@ export function PlanetDetail({
 
                     <S.Spacer />
 
-                    <S.PlayLink href={`/planet/${id}`}>
-                        <HiOutlinePlay size={20} /> {t('planet.play')}
-                    </S.PlayLink>
+                    {baseUrl && (
+                        <S.PlayLink href={baseUrl}>
+                            <HiOutlinePlay size={20} /> {t('planet.play')}
+                        </S.PlayLink>
+                    )}
                 </S.RightColumn>
             </S.TopSection>
             <S.Actions>
